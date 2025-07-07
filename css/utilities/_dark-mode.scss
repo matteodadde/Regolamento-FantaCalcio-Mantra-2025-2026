@@ -1,0 +1,216 @@
+/* Dark mode base */
+body.dark-mode {
+  background-color: #121212;
+  color: #e0e0e0;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Link */
+body.dark-mode a {
+  color: #82aaff;
+}
+
+body.dark-mode a:hover,
+body.dark-mode a:focus {
+  background-color: #2c3e70;
+  color: #c3d9ff;
+  box-shadow: none;
+}
+
+/* Navbar */
+body.dark-mode .main-nav {
+  background-color: #1e1e1e;
+  box-shadow: 0 0 12px rgba(255, 255, 255, 0.1);
+}
+
+body.dark-mode .main-nav.open {
+  background-color: #222222;
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.15);
+}
+
+body.dark-mode .main-nav ul li a {
+  color: #b0c4ff;
+}
+
+body.dark-mode .main-nav ul li a.active {
+  background-color: #3a5aff;
+  color: white;
+  box-shadow: 0 0 8px #3a5aff;
+}
+
+/* Bottoni */
+body.dark-mode button,
+body.dark-mode .btn {
+  background-color: #3a5aff;
+  color: white;
+  box-shadow: 0 0 10px #3a5aff;
+  border: none;
+}
+
+body.dark-mode button:hover,
+body.dark-mode .btn:hover {
+  background-color: #2447d3;
+  box-shadow: 0 0 12px #2447d3;
+}
+
+/* Sezioni */
+body.dark-mode section,
+body.dark-mode .card,
+body.dark-mode .box,
+body.dark-mode .container,
+body.dark-mode .content-box {
+  background-color: #1f1f1f;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.7);
+  color: #d0d0d0;
+}
+
+/* Tabelle */
+body.dark-mode table {
+  background-color: #1f1f1f;
+  border-color: #333;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.7);
+}
+
+body.dark-mode tbody tr{
+  background-color: rgba(66, 76, 112, 0.6);
+}
+
+body.dark-mode tbody tr:hover {
+  background-color: #3a5aff33;
+}
+
+body.dark-mode th {
+  background-color: #3a5aff;
+  color: white;
+}
+
+body.dark-mode th, 
+body.dark-mode td {
+  border-bottom: 1px solid #444;
+  color: #dcdcdc;
+}
+
+/* Form: input, select, textarea */
+body.dark-mode input, 
+body.dark-mode select, 
+body.dark-mode textarea {
+  background-color: #222;
+  border: 1.5px solid #555;
+  color: #ddd;
+}
+
+body.dark-mode input:focus, 
+body.dark-mode select:focus, 
+body.dark-mode textarea:focus {
+  border-color: #3a5aff;
+  box-shadow: 0 0 8px #3a5aff;
+  outline: none;
+}
+
+body.dark-mode label {
+  color: #bbb;
+}
+
+/* Scrollbar custom */
+body.dark-mode .main-nav.open {
+  scrollbar-color: #3a5aff #222;
+}
+
+body.dark-mode .main-nav.open::-webkit-scrollbar-thumb {
+  background-color: #3a5aff;
+}
+
+/* Blocchi informativi - Modalità scura */
+body.dark-mode .note,
+body.dark-mode .esempio {
+  padding: 1rem 1.25rem;
+  margin: 1.5rem 0;
+  border-radius: 8px;
+  font-style: italic;
+  font-size: 1rem;
+  line-height: 1.5;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* NOTE */
+body.dark-mode .note {
+  background: linear-gradient(to right, #3e3a1a, #4f4a23);
+  border-left: 5px solid #f1c40f;
+  color: #f9f9f9;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
+}
+
+body.dark-mode .note:hover {
+  background: linear-gradient(135deg, #3b311f 0%, #4d3a1a 100%);
+  box-shadow: 0 6px 16px rgba(243, 156, 18, 0.4);
+  cursor: default;
+}
+
+/* ESEMPI */
+body.dark-mode .esempio {
+  background: linear-gradient(135deg, #1e2a3a 0%, #223350 100%);
+  border-left: 5px solid #3498db;
+  color: #d0d9f7;
+  box-shadow: 0 4px 12px rgba(52, 152, 219, 0.3);
+}
+
+body.dark-mode .esempio:hover {
+  background: linear-gradient(135deg, #223350 0%, #2a3e63 100%);
+  box-shadow: 0 6px 16px rgba(52, 152, 219, 0.5);
+  cursor: default;
+}
+
+/* Esempi tipo "Vlahovic", "Kean" */
+body.dark-mode .giocatore-esempio {
+  background-color: #1b1b1b;
+  color: #9fc3ff;
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  border: 1px solid #3a5aff44;
+  display: inline-block;
+  margin: 0.25rem 0;
+}
+
+/* Tabelle responsive */
+body.dark-mode table.responsive {
+  background-color: #1f1f1f;
+}
+
+body.dark-mode table.responsive th,
+body.dark-mode table.responsive td {
+  border-color: #444;
+}
+
+/* Checkbox, radio */
+body.dark-mode input[type="checkbox"],
+body.dark-mode input[type="radio"] {
+  accent-color: #3a5aff;
+}
+
+/* Titoli */
+body.dark-mode h1,
+body.dark-mode h2,
+body.dark-mode h3,
+body.dark-mode h4,
+body.dark-mode h5,
+body.dark-mode h6 {
+  color: #e4e4e4;
+}
+
+/* -- Nuove regole per menu-toggle hamburger (cerchio + linee) -- */
+body.dark-mode .menu-toggle {
+  background-color: #222; /* sfondo cerchio scuro */
+  box-shadow: 0 0 6px rgba(58, 90, 255, 0.6);
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+body.dark-mode .menu-toggle:hover,
+body.dark-mode .menu-toggle:focus {
+  background-color: #3a5aff;
+  box-shadow: 0 0 12px #3a5aff;
+}
+
+body.dark-mode .menu-toggle span {
+  background-color: #d0d0d0; /* linee hamburger chiare */
+  transition: background-color 0.3s ease;
+}

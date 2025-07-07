@@ -1,0 +1,145 @@
+/* Tabelle moderne, pulite e responsive */
+table {
+  width: 100%;
+  border-collapse: separate; /* per bordi arrotondati */
+  border-spacing: 0;
+  margin-top: 2rem;
+  font-size: 1rem;
+  background-color: var(--table-bg, #fff);
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.07);
+  transition: box-shadow 0.3s ease, transform 0.25s ease;
+  table-layout: auto;
+  will-change: box-shadow;
+}
+
+/* Migliora il focus per accessibilità */
+table:focus-within {
+  box-shadow: 0 0 0 3px var(--primary-color, #3498db);
+  outline: none;
+}
+
+/* Intestazioni */
+th {
+  background-color: var(--primary-color, #3498db);
+  color: #fff;
+  text-transform: uppercase;
+  font-size: 0.85rem;
+  letter-spacing: 0.07em;
+  padding: 1rem 1.5rem;
+  text-align: left;
+  border-bottom: 2px solid rgba(255, 255, 255, 0.15);
+  user-select: none;
+  font-weight: 700;
+  vertical-align: middle;
+  white-space: nowrap;
+  transition: background-color 0.3s ease;
+}
+
+/* Hover e focus su intestazioni per feedback */
+th:hover,
+th:focus {
+  background-color: var(--primary-color, #3498db);
+  filter: brightness(110%);
+  cursor: default;
+  outline: none;
+}
+
+/* Celle */
+td {
+  padding: 1rem 1.5rem;
+  border-bottom: 1px solid #eee;
+  color: var(--text-color, #2c3e50);
+  vertical-align: middle;
+  word-wrap: break-word;
+  white-space: normal;
+  transition: background-color 0.25s ease;
+}
+
+/* Righe corpo tabella con animazione hover */
+tbody tr {
+  background-color: var(--table-row-bg, #ffffff);
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+  cursor: default;
+  outline-offset: 2px;
+}
+
+/* Hover e focus righe */
+tbody tr:hover,
+tbody tr:focus-within {
+  background-color: #e8f4ff;
+  cursor: pointer;
+  outline: none;
+  box-shadow: inset 4px 0 0 var(--primary-color, #3498db);
+}
+
+/* Per migliorare accessibilità - focus con bordo */
+tbody tr:focus-within {
+  outline: 2px solid var(--primary-color, #3498db);
+  outline-offset: -2px;
+}
+
+/* Scroll orizzontale fluido per mobile */
+@media screen and (max-width: 768px) {
+  table {
+    font-size: 0.9rem;
+    display: block;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    border-radius: 8px;
+    /* Optional: aggiungi padding sotto per evitare taglio ombre */
+    padding-bottom: 0.5rem;
+  }
+
+  thead,
+  tbody,
+  th,
+  td,
+  tr {
+    display: block;
+  }
+
+  /* Rendi intestazioni e celle più leggibili su mobile */
+  thead tr {
+    position: absolute;
+    top: -9999px;
+    left: -9999px;
+  }
+
+  tbody tr {
+    margin-bottom: 1rem;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    background-color: var(--table-row-bg, #fff);
+    padding: 1rem;
+  }
+
+  tbody tr:hover,
+  tbody tr:focus-within {
+    box-shadow: 0 4px 12px rgba(52, 152, 219, 0.3);
+    background-color: #f0f9ff;
+  }
+
+  td {
+    border: none;
+    padding: 0.5rem 1rem;
+    position: relative;
+    padding-left: 50%;
+    white-space: normal;
+    text-align: left;
+  }
+
+  /* Usa un pseudo-elemento per mostrare il titolo della colonna dentro ogni cella */
+  td::before {
+    position: absolute;
+    top: 50%;
+    left: 1.5rem;
+    transform: translateY(-50%);
+    font-weight: 600;
+    white-space: nowrap;
+    content: attr(data-label);
+    color: var(--primary-color, #3498db);
+    font-size: 0.8rem;
+  }
+}

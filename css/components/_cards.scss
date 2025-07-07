@@ -1,0 +1,115 @@
+/* Sections */
+section {
+  background: #fff;
+  padding: clamp(1.5rem, 2vw, 2.5rem) clamp(1.25rem, 3vw, 2rem);
+  border-radius: var(--border-radius, 0.5rem);
+  box-shadow: var(--shadow-light, 0 4px 12px rgba(0,0,0,0.07));
+  margin-bottom: clamp(2rem, 4vw, 3rem);
+  transition: 
+    transform 0.4s cubic-bezier(0.4, 0, 0.2, 1), 
+    box-shadow 0.4s cubic-bezier(0.4, 0, 0.2, 1),
+    background-color 0.3s ease;
+  will-change: transform, box-shadow, background-color;
+  cursor: default;
+  outline-offset: 4px;
+  position: relative;
+  /* For better tap target on mobile */
+  min-height: 6rem;
+}
+
+section:hover,
+section:focus-within {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-hover, 0 12px 28px rgba(0,0,0,0.15));
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+  background-color: #fafafa;
+  outline: none;
+}
+
+/* Blocchi informativi stile nota/esempio */
+.note,
+.esempio {
+  border-radius: 0.5rem;
+  padding: clamp(0.75rem, 1.5vw, 1rem) clamp(1rem, 2.5vw, 1.25rem);
+  margin: clamp(1rem, 2vw, 1.5rem) 0;
+  font-style: italic;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  transition: background 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+  cursor: default;
+  user-select: text;
+  line-height: 1.4;
+  color: inherit;
+  /* Improve text scaling on mobile */
+  font-size: clamp(0.9rem, 1.3vw, 1rem);
+}
+
+/* Note */
+.note {
+  background: #fffbea;
+  border-left: 5px solid #f39c12;
+  color: #333;
+  box-shadow: 0 3px 10px rgba(243, 156, 18, 0.15);
+}
+
+.note:hover,
+.note:focus {
+  background: linear-gradient(135deg, #fff4d6 0%, #ffe9b3 100%);
+  border-left-color: #e67e22;
+  box-shadow: 0 6px 20px rgba(230, 126, 34, 0.2);
+  cursor: pointer;
+  outline: none;
+}
+
+/* Esempio */
+.esempio {
+  background: #f4f8ff;
+  border-left: 5px solid #2980b9;
+  color: #2c3e50;
+  box-shadow: 0 3px 10px rgba(41, 128, 185, 0.15);
+}
+
+.esempio:hover,
+.esempio:focus {
+  background: linear-gradient(135deg, #eaf2ff 0%, #d4e4fc 100%);
+  border-left-color: #1f6391;
+  box-shadow: 0 6px 20px rgba(31, 99, 145, 0.2);
+  cursor: pointer;
+  outline: none;
+}
+
+/* Focus accessibility */
+.note:focus,
+.esempio:focus,
+section:focus-within {
+  box-shadow: 0 0 0 3px var(--accent-color);
+  outline-offset: 3px;
+}
+
+/* Remove hover effects on touch devices */
+@media (hover: none) {
+  section:hover,
+  .note:hover,
+  .esempio:hover {
+    transform: none !important;
+    box-shadow: var(--shadow-light) !important;
+    background: initial !important;
+    border-left-color: initial !important;
+    cursor: default !important;
+  }
+}
+
+/* Responsive adjustments */
+@media (max-width: 600px) {
+  section {
+    padding: 1.5rem 1rem;
+    margin-bottom: 2rem;
+  }
+  
+  .note,
+  .esempio {
+    font-size: 0.9rem;
+    padding: 0.8rem 1rem;
+    margin: 1rem 0;
+  }
+}

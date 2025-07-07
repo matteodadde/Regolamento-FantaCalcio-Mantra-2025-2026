@@ -1,0 +1,56 @@
+:root {
+  /* Color palette */
+  --primary-color: #1a73e8;        /* Blu principale brillante */
+  --primary-dark: #0b57d0;         /* Blu scuro per hover o focus */
+  --accent-color: #e8f0fe;         /* Colore chiaro di sfondo/accento */
+  --secondary-color: #f5f7fa;      /* Sfondo secondario molto chiaro */
+  
+  --text-color: #2d2f31;           /* Testo principale scuro */
+  --heading-color: #1a1a1a;        /* Titoli più scuri */
+  --heading-accent: rgba(255, 111, 97, 0.85); /* Accento arancio per titoli */
+  
+  /* Bordo e ombre */
+  --border-radius: 10px;           /* Leggermente più piccolo per mobile */
+  --shadow-light: 0 4px 15px rgba(0, 0, 0, 0.05);  /* Ombra più leggera per mobile */
+  --shadow-hover: 0 8px 25px rgba(26, 115, 232, 0.12);
+  
+  /* Transizione fluida */
+  --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+
+  /* Stati/Alert colors */
+  --info-color: #3498db;           /* Info blu */
+  --warning-color: #f39c12;        /* Avviso arancione */
+  --success-color: #28a745;        /* Successo verde */
+  --danger-color: #c0392b;         /* Errore rosso */
+  
+  /* Hamburger menu toggle */
+  --menu-line-width: 24px;         /* Larghezza linee hamburger ridotta per mobile */
+  --menu-line-height: 3px;         /* Altezza linee hamburger */
+  --menu-line-spacing: 7px;        /* Spaziatura verticale tra linee più compatta */
+  --toggle-hit-area: 44px;          /* Area cliccabile toggle rimane 44px */
+  
+  /* Z-index per livelli sovrapposti */
+  --z-index-sidebar: 1000;
+  --z-index-toggle: 1100;
+  
+  /* Layout */
+  --sidebar-width: 220px;          /* Larghezza sidebar leggermente più stretta */
+  --mobile-breakpoint: 768px;      /* Breakpoint mobile/tablet */
+
+  /* Tabelle */
+  --table-border: 1px solid #e0e0e0;
+  
+  /* Font family */
+  /* --font-family: 'Inter', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; */
+
+  /* Background toggle button */
+  --toggle-bg-light: transparent;
+  --toggle-bg-hover: #e3f2fd;
+
+  /* Dark mode colors */
+  --background-color-dark: #121212;
+  --text-color-dark: #e0e0e0;
+  --primary-color-dark: #8ab4f8;
+  --toggle-bg-dark: transparent;
+  --toggle-bg-hover-dark: rgba(255, 255, 255, 0.1);
+}

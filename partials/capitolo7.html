@@ -1,0 +1,153 @@
+  <section id = "Capitolo-7">
+  <h2>🔁 Capitolo 7 – Panchina e Sostituzioni</h2>
+
+    <p><strong>Panchina:</strong></p>
+  <ul>    
+    <li>La panchina è composta da <strong>12 calciatori</strong>, ordinati per preferenza assoluta.</li>
+    <li>Deve includere almeno <strong>1 portiere</strong> e <strong>11 giocatori di movimento</strong>.</li>
+    <li>L’ordine determina le sostituzioni automatiche e <em>non</em> deve seguire il classico schema “PDCA” (Portiere, Difensore, Centrocampista, Attaccante).</li>
+    <li>Inserire per primi i giocatori più offensivi o che si ritiene possano offrire le migliori prestazioni.</li>
+    <li>Massimo <strong>3 sostituzioni</strong> per partita.</li>
+  </ul>
+
+  <p><strong>Sostituzioni:</strong> si applicano le regole <em>Master</em> e <em>Switch Plus</em>.</p>
+  <p><strong>Tempo limite per le modifiche:</strong> 1 minuto prima dell’inizio della prima partita di giornata.</p>
+
+  <h3>7.1 🧤 Sostituzione del Portiere</h3>
+  <p>
+    Il portiere è sempre il primo ad essere sostituito in caso di assenza del titolare. 
+    Se il secondo portiere in panchina ha preso voto, subentrerà automaticamente.
+  </p>
+  <p>
+    La presenza di più portieri in panchina non cambia questo meccanismo: la priorità segue l’<em>ordine della panchina</em>.
+  </p>
+  <p>
+    <strong>Attenzione:</strong> l’eventuale subentro di un portiere riduce di un’unità il numero di sostituzioni disponibili.
+  </p>
+
+<h3>7.2 🤖 La sostituzione dei calciatori di movimento – Solo modalità <strong>MASTER</strong></h3>
+
+<p>
+  La <strong>Modalità MASTER</strong> rappresenta l’unica modalità di gestione delle sostituzioni adottata nel presente regolamento. 
+  Si tratta dell’opzione più strategica e dinamica, pensata per utenti che abbiano piena consapevolezza delle regole Mantra.
+</p>
+
+<p>
+  A differenza di altri approcci più rigidi, in MASTER viene superata la priorità dello schema base scelto dal fantallenatore. 
+  Il sistema valuta ogni possibile combinazione disponibile per effettuare le sostituzioni, privilegiando la qualità della formazione finale rispetto al rispetto dello schema iniziale.
+</p>
+
+<h4>⚙️ Principi fondamentali</h4>
+
+<ul>
+  <li>Le sostituzioni avvengono in blocco, non una per una.</li>
+  <li>
+    L’algoritmo determina quanti titolari sono assenti o senza voto, e verifica quale combinazione di panchinari 
+    (secondo l’ordine di schieramento) può garantire la migliore formazione possibile.
+  </li>
+  <li>
+    Le sostituzioni si basano su un algoritmo che esplora tutte le soluzioni ammissibili, secondo il seguente ordine gerarchico:
+  </li>
+</ul>
+
+<h4>📊 Ordine gerarchico delle sostituzioni</h4>
+
+<ol>
+  <li>
+    <p><strong>Soluzioni OTTIMALI o EFFICIENTI (senza malus)</strong></p>
+    <p>
+      Il sistema tenta anzitutto di ricostruire una formazione completa e valida senza malus, 
+      utilizzando qualsiasi schema disponibile, anche diverso da quello originariamente scelto 
+      (<em>cambio modulo incluso</em>).
+    </p>
+    <p>
+      In questo scenario, verranno inseriti in campo i panchinari secondo l’ordine preferenziale deciso dal fantallenatore.
+    </p>
+  </li>
+  <li>
+    <p><strong>Soluzioni ADATTATE (con malus)</strong></p>
+    <p>
+      Se non esistono combinazioni valide senza malus, il sistema procede a cercare una soluzione 
+      che includa calciatori fuori posizione, applicando un malus di <strong>-1 punto per ciascun adattamento</strong>.
+    </p>
+    <p>
+      Anche in questa fase non esiste priorità per lo schema base: viene scelto lo schema che consente 
+      il miglior risultato complessivo, minimizzando i malus e rispettando l’ordine della panchina.
+    </p>
+  </li>
+</ol>
+
+<h4>🧠 Meccanismo e logica di sostituzione</h4>
+
+<p>
+  Il sistema genera tutte le possibili combinazioni di panchinari partendo sempre dalla prima posizione in panchina. 
+  Tra le combinazioni del medesimo rango (senza malus o con stesso numero di malus), la priorità è sempre assegnata 
+  a quelle che includono i giocatori schierati per primi.
+</p>
+
+<p>
+  Una volta individuata la combinazione più adatta, il sistema ricalcola la disposizione degli <strong>11 in campo</strong> 
+  e assegna eventualmente i malus ai calciatori schierati fuori ruolo.
+  Questo può comportare una riallocazione dei ruoli anche tra i titolari: ad esempio, se entra in campo un <code>DC</code> 
+  fuori posizione, il malus potrebbe essere assegnato a uno qualunque dei difensori centrali presenti, 
+  non necessariamente al subentrato.
+</p>
+
+<p class="note">
+  <strong>Nota:</strong>
+  A volte può sembrare che un calciatore entrato fuori ruolo non abbia ricevuto il malus. 
+  In realtà, il sistema assegna il malus all’interno del gruppo dei calciatori che possono ricoprire quel ruolo in modo indifferente. 
+  L’importante è che il malus sia sempre conteggiato <strong>esattamente una volta</strong>, anche se visivamente 
+  non viene assegnato al calciatore subentrato.
+</p>
+
+  <h3>7.3 ⚠️ Schierare Calciatori Fuori Posizione</h3>
+  <p>
+    Il sistema consente, in casi eccezionali, di schierare calciatori <em>fuori ruolo</em> con un malus di 1 punto.
+  </p>
+  <p><strong>Limitazioni durante l’inserimento della formazione:</strong></p>
+  <ul>
+    <li><strong>B, Dd o Ds</strong> non possono essere schierati come <strong>Dc</strong>.</li>
+    <li><strong>Dd</strong> non può essere schierato come <strong>Ds</strong> e viceversa.</li>
+    <li><strong>E</strong> non può essere schierata come <strong>M</strong> (ma può giocare in <em>M/C</em>).</li>
+    <li><strong>M</strong> non può essere schierata come <strong>E</strong> (ma può giocare in <em>E/W</em>).</li>
+    <li><strong>W</strong> non può essere schierata come <strong>T</strong> (ma può giocare in <em>T/A</em>).</li>
+  </ul>
+  <p>
+    Se tutti e 10 i giocatori di movimento hanno preso voto, nessuna sostituzione sarà avviata e i malus per fuori posizione saranno conteggiati integralmente.
+  </p>
+
+  <h3>7.4 🔄 Modalità <strong>Switch</strong></h3>
+<p>
+  È disponibile una funzione di gioco che permette di <strong>“assicurare la titolarità”</strong> di un determinato calciatore (<em>Vlahovic</em>) inserito in formazione. Qualora <em>Vlahovic</em> nella sua partita reale <strong>non inizi dal primo minuto</strong>, la formazione si modifica spostando automaticamente <em>Vlahovic</em> in panchina e promuovendo titolare al suo posto un panchinaro preselezionato (<em>Kean</em>).
+</p>
+<p>
+  Si tratta in pratica di una <strong>inversione tra due calciatori</strong> (campo e panchina) condizionata alla reale non titolarità. Una volta avvenuto lo Switch, <strong><em>Vlahovic</em> andrà ad occupare esattamente la posizione che aveva <em>Kean</em> in panchina</strong>.
+</p>
+<p>
+  Lo Switch <strong>non viene considerato una sostituzione</strong>, ma è un cambio di formazione a tutti gli effetti <strong>antecedente</strong> all’inizio della partita.
+</p>
+<p>
+  In questa lega si utilizza lo <strong>Switch Plus</strong>, una funzionalità che consente una maggiore flessibilità tattica nella gestione della formazione.
+</p>
+<ul>
+  <li><strong>Switch Plus:</strong> è possibile selezionare due calciatori anche di <strong>ruoli diversi</strong>. In caso di attivazione, verrà automaticamente applicato un cambio modulo se esiste uno schema risultante valido..</li>
+</ul>
+<p>
+  Dopo l’attivazione, ogni fantallenatore troverà nella sezione <em>“Schiera Formazione”</em> lo slot apposito per inserire i due calciatori “switchabili”.
+</p>
+
+  <p class="note">
+    <strong>Nota:</strong> lo schieramento fuori posizione non è una strategia, ma una tolleranza per emergenze (infortuni, squalifiche, ecc.). L’algoritmo cercherà sempre di evitare il malus, anche modificando radicalmente lo schema iniziale.
+  </p>
+
+  <figure>
+    <img src="https://content.fantacalcio.it/web/img/medium/53b9bee6-224f-4d53-ada2-47be4c6205c9.jpg" alt="Esempio sostituzioni e schieramento" style="max-width:100%; height:auto; border-radius:8px; margin:1em 0;" />
+  </figure>
+
+  <p>
+    <a class="pdf-link" href="https://content.fantacalcio.it/web/risorse/TabellaSostituzioniSchema2021-2022.pdf" target="_blank" rel="noopener noreferrer" style="text-decoration:none; font-weight:bold;">
+      📄 Scarica la Tabella delle Sostituzioni Ufficiale (PDF)
+    </a>
+  </p>
+  </section>

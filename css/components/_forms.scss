@@ -1,0 +1,93 @@
+/* Forms */
+input,
+select,
+textarea {
+  font-family: 'Inter', sans-serif;
+  font-size: clamp(0.9rem, 1vw, 1rem);
+  padding: clamp(0.5rem, 1vw, 0.65rem) clamp(0.75rem, 2vw, 1rem);
+  border: 1.5px solid #ddd;
+  border-radius: var(--border-radius, 0.5rem);
+  transition: border-color 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+  width: 100%;
+  background-color: #fff;
+  color: var(--text-color, #222);
+  box-sizing: border-box;
+  resize: vertical; /* for textarea */
+  min-height: 2.75rem;
+  outline-offset: 2px;
+  appearance: none; /* Remove default select styling on some browsers */
+  -webkit-appearance: none;
+  -moz-appearance: none;
+}
+
+/* Subtle shadow and smoother focus */
+input:focus,
+select:focus,
+textarea:focus {
+  border-color: var(--primary-color, #4a90e2);
+  box-shadow: 0 0 8px rgba(74, 144, 226, 0.5);
+  outline: none;
+  background-color: #fff;
+}
+
+/* Placeholder styling */
+input::placeholder,
+textarea::placeholder {
+  color: #999;
+  opacity: 1; /* Firefox fix */
+  transition: color 0.3s ease;
+}
+
+input:focus::placeholder,
+textarea:focus::placeholder {
+  color: transparent;
+}
+
+/* Label */
+label {
+  font-weight: 600;
+  margin-bottom: 0.4rem;
+  display: inline-block;
+  font-size: clamp(0.9rem, 1vw, 1rem);
+  color: var(--text-color, #222);
+  cursor: pointer;
+  user-select: none;
+  transition: color 0.3s ease;
+}
+
+/* Label highlight when input focused */
+/* For accessibility, you may want to use JS for this, but this works if label follows input */
+input:focus + label,
+select:focus + label,
+textarea:focus + label {
+  color: var(--primary-color, #4a90e2);
+}
+
+/* Accessibility: highlight required fields */
+input[required],
+select[required],
+textarea[required] {
+  border-color: var(--primary-color, #4a90e2);
+  box-shadow: none;
+}
+
+/* Remove autofill background color in Chrome */
+input:-webkit-autofill {
+  box-shadow: 0 0 0px 1000px #fff inset !important;
+  -webkit-text-fill-color: var(--text-color, #222) !important;
+}
+
+/* Responsive tweaks */
+@media (max-width: 480px) {
+  input,
+  select,
+  textarea {
+    font-size: 0.95rem;
+    padding: 0.5rem 0.75rem;
+    min-height: 2.5rem;
+  }
+
+  label {
+    font-size: 0.95rem;
+  }
+}
