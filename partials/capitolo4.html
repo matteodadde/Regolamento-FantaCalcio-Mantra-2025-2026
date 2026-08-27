@@ -38,26 +38,70 @@
     <li><strong>102+</strong>: 10 gol</li>
   </ul>
 
-  <h3>🛡️ Modificatore Difesa – D-Factor</h3>
+  <h3>🛡️ Modificatore Difesa – D-Factor (Versione 5+1)</h3>
   <p>
-    Il <strong>FATTORE DIFENSIVO "D-Factor"</strong> attribuisce punti bonus (o sottrae malus all’avversario) in base alla prestazione media della difesa titolare, valutata tramite media voto.
-    Vengono presi in considerazione 5 giocatori difensivi presenti in ogni schema. 
-    Se il numero di calciatori con ruolo tra <em>Dc, B, Dd, Ds, E, M</em> è superiore a cinque, verranno considerati i 5 con il voto migliore.
-    <br>
-    <strong>Almeno 3 dei 5</strong> devono obbligatoriamente avere il ruolo <strong>Dc, B, Dd</strong> o <strong>Ds</strong> (cioè contenere la lettera <strong>D</strong> o <strong>B</strong>).
+    Il <strong>FATTORE DIFENSIVO "D-Factor"</strong> è un meccanismo che premia (o penalizza) la squadra in base alla prestazione del proprio reparto arretrato. 
+    L'obiettivo è valorizzare gli “uomini di fatica”, stimolando i fantallenatori a costruire squadre equilibrate e complete, non solo orientate all'attacco.
   </p>
 
-  <p>
-    L’obiettivo è valorizzare anche gli “uomini di fatica”, stimolando i fantallenatori a costruire squadre equilibrate e complete, non solo orientate all'attacco.
-  </p>
+  <h4>⚙️ Come si calcola la Media Voto</h4>
+  <p>Il D-Factor si basa <strong>esclusivamente sui voti puri in pagella</strong> (senza sommare o sottrarre bonus e malus come gol, ammonizioni, ecc.).</p>
+  <p>In questa Lega è attiva la configurazione <strong>"5+1"</strong>. Il calcolo della media matematica avviene prendendo in considerazione <strong>6 calciatori</strong>, seguendo queste rigide regole:</p>
+  <ul>
+    <li><strong>Il Portiere:</strong> Partecipa sempre ed è obbligatorio per il calcolo.</li>
+    <li><strong>5 Giocatori di Movimento:</strong> Vengono selezionati i 5 calciatori schierati con ruoli difensivi (Dc, B, Dd, Ds, E, M).</li>
+    <li><strong>Scelta dei Migliori:</strong> Se nel tuo schema ci sono più di 5 giocatori che ricoprono questi ruoli (es. un 4-3-3 con due E e un M), il sistema prenderà in automatico <strong>i 5 con il voto in pagella migliore</strong>, massimizzando il tuo vantaggio.</li>
+    <li><strong>La Regola del 3:</strong> Affinché la media sia valida, tra i 5 giocatori di movimento selezionati <strong>almeno 3</strong> devono obbligatoriamente avere un ruolo puramente difensivo, ovvero contenere la lettera D o B (<strong>Dc, B, Dd, Ds</strong>).</li>
+  </ul>
 
+  <h4>⚠️ Casi di Annullamento del D-Factor</h4>
   <p>
-    Disponibile anche la versione <strong>5+1</strong>, che include il portiere nella media: in tal caso si considerano 6 calciatori (portiere incluso) senza escludere nessuno dei difensori di movimento.
-    <br>
-    <em>Non è permessa la configurazione con portiere + solo 4 difensori.</em>
+    Il D-Factor <strong>non si attiva</strong> (assegnando 0 punti bonus) nei seguenti casi, indipendentemente dai bei voti presi dagli altri giocatori:
   </p>
+  <ul>
+    <li>Se la squadra gioca in inferiorità numerica in difesa (es. porti a voto solo 4 difensori validi).</li>
+    <li>Se si schiera una configurazione non consentita, come l'utilizzo di soli 4 difensori totali senza raggiungere la quota minima richiesta.</li>
+  </ul>
 
-  <p>
-    Se la formazione schierata non presenta almeno 5 difensori validi (in base ai criteri sopra descritti), ad esempio in caso di inferiorità numerica, il D-Factor <strong>non si attiva</strong> indipendentemente dalla media voto ottenuta dagli altri.
-  </p>
+  <h4>📊 Tabella di Conversione Bonus</h4>
+  <p>Una volta ottenuta la media aritmetica (Portiere + 5 Difensori), si applica al punteggio totale della squadra il seguente bonus:</p>
+  <table border="1" cellpadding="8" cellspacing="0" style="border-collapse: collapse; width: 100%; text-align: left;">
+    <thead style="background-color: #f2f2f2;">
+      <tr>
+        <th>Media Voto Puro (Portiere + 5 Dif)</th>
+        <th>Bonus assegnato alla Squadra</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>&lt; 6</td>
+        <td><strong>0 punti</strong></td>
+      </tr>
+      <tr>
+        <td>≥ 6 e &lt; 6.25</td>
+        <td><strong>+ 1 punto</strong></td>
+      </tr>
+      <tr>
+        <td>≥ 6.25 e &lt; 6.5</td>
+        <td><strong>+ 1 punto</strong></td>
+      </tr>
+      <tr>
+        <td>≥ 6.5 e &lt; 6.75</td>
+        <td><strong>+ 2 punti</strong></td>
+      </tr>
+      <tr>
+        <td>≥ 6.75 e &lt; 7</td>
+        <td><strong>+ 2 punti</strong></td>
+      </tr>
+      <tr>
+        <td>≥ 7 e &lt; 7.25</td>
+        <td><strong>+ 3 punti</strong></td>
+      </tr>
+      <tr>
+        <td>≥ 7.25</td>
+        <td><strong>+ 3 punti</strong></td>
+      </tr>
+    </tbody>
+  </table>
+  
   </section>
